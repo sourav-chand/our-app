@@ -25,12 +25,24 @@ const services = [
   },
   {
     num: "03.",
-    title: "WEB\nDEVELOPMENT",
+    title: "WEB\nDESIGN",
     desc: "Creative Design team on demand that can design, build, ship and scale your real has development agency.",
-    items: ["Frontend Development", "Backend Systems", "API Integration"],
+    items: ["Mobile & Web Design", "Interation Design", "UX Research & Plan"],
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+      </svg>
+    ),
+  },
+  {
+    num: "04.",
+    title: "BACKEND\nDEVELOPMENT",
+    desc: "Creative Design team on demand that can design, build, ship and scale your real has development agency.",
+    items: ["Mobile & Web Design", "Interation Design", "UX Research & Plan"],
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12H3m18 0h-2M12 5V3m0 18v-2m4.95-13.95l-1.41 1.41M6.46 17.54l-1.41 1.41M19.46 17.54l-1.41-1.41M6.46 6.46L5.05 5.05M12 8a4 4 0 100 8 4 4 0 000-8z" />
       </svg>
     ),
   },

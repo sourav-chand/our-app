@@ -6,6 +6,7 @@ import EmpoweringSkills from "./components/EmpoweringSkills";
 import TechStack from "./components/TechStack";
 import CaseStudy from "./components/CaseStudy";
 import PremiumService from "./components/PremiumService";
+import Testimonial from "./components/Testimonial";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TechStack />
       <CaseStudy />
       <PremiumService />
+      <Testimonial />
     </main>
   );
 }
