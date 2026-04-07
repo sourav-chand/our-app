@@ -10,6 +10,7 @@ import Testimonial from "./components/Testimonial";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Journal from "./components/Journal";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Journal />
+      <Footer />
     </main>
   );
 }
