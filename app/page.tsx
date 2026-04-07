@@ -7,6 +7,9 @@ import TechStack from "./components/TechStack";
 import CaseStudy from "./components/CaseStudy";
 import PremiumService from "./components/PremiumService";
 import Testimonial from "./components/Testimonial";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
+import Journal from "./components/Journal";
 
 export default function Home() {
   return (
@@ -20,6 +23,9 @@ export default function Home() {
       <CaseStudy />
       <PremiumService />
       <Testimonial />
+      <FAQ />
+      <CTA />
+      <Journal />
     </main>
   );
 }
