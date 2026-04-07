@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const services = [
   {
     num: "01.",
@@ -53,7 +55,7 @@ export default function PremiumService() {
     <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top: avatar + headline + description */}
-      <div className="top-row flex flex-col items-start relative mb-16">
+      <FadeUp className="top-row flex flex-col items-start relative mb-16">
 
         {/* Avatar */}
         <div className="avatar mb-[-0.75rem] ml-56 z-10">
@@ -82,10 +84,10 @@ export default function PremiumService() {
             Our ability to combine expertise and systems thinking is what fuels us as a team.
           </p>
         </div>
-      </div>
+      </FadeUp>
 
       {/* Service rows */}
-      <div className="services-list flex flex-col divide-y divide-gray-100">
+      <FadeUp delay={0.2} className="services-list flex flex-col divide-y divide-gray-100">
         {services.map((s, i) => (
           <div key={i} className="service-item grid grid-cols-[80px_1fr_1fr_80px] items-center gap-8 py-8">
 
@@ -117,7 +119,7 @@ export default function PremiumService() {
 
           </div>
         ))}
-      </div>
+      </FadeUp>
 
     </section>
   );

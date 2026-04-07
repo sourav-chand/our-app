@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const posts = [
   {
     title: "AROLAX DEVELOPMENT TECH AGENCY WE TALENT MEET OPPORTUNITY",
@@ -26,7 +28,7 @@ export default function Journal() {
     <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top row */}
-      <div className="top-row flex items-start justify-between mb-12">
+      <FadeUp className="top-row flex items-start justify-between mb-12">
         <div className="headline">
           <div className="overflow-hidden">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
@@ -54,10 +56,10 @@ export default function Journal() {
             </svg>
           </a>
         </div>
-      </div>
+      </FadeUp>
 
       {/* Cards grid */}
-      <div className="posts-grid grid grid-cols-3 gap-4">
+      <FadeUp delay={0.2} className="posts-grid grid grid-cols-3 gap-4">
         {posts.map((post, i) => (
           <div
             key={i}
@@ -95,7 +97,7 @@ export default function Journal() {
             </div>
           </div>
         ))}
-      </div>
+      </FadeUp>
 
     </section>
   );

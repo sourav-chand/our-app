@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const techs = [
   {
     name: "WORDPRESS",
@@ -48,12 +50,12 @@ export default function TechStack() {
     <section className="w-full bg-white px-12 py-20">
 
       {/* Label */}
-      <div className="section-label flex justify-center mb-12">
+      <FadeUp className="section-label flex justify-center mb-12">
         <p className="text-sm text-gray-500">Our Arolax Technology Expertise includes</p>
-      </div>
+      </FadeUp>
 
       {/* Tech circles */}
-      <div className="tech-grid flex items-center justify-center gap-6 flex-wrap">
+      <FadeUp delay={0.15} className="tech-grid flex items-center justify-center gap-6 flex-wrap">
         {techs.map((tech, i) => (
           <div
             key={i}
@@ -65,7 +67,7 @@ export default function TechStack() {
             </span>
           </div>
         ))}
-      </div>
+      </FadeUp>
 
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeUp from "./FadeUp";
 
 const testimonials = [
   {
@@ -38,7 +39,7 @@ export default function Testimonial() {
     <section className="w-full bg-white px-12 py-20 flex items-center gap-16 overflow-hidden">
 
       {/* Left */}
-      <div className="left-col flex flex-col gap-8 max-w-xs shrink-0">
+      <FadeUp className="left-col flex flex-col gap-8 max-w-xs shrink-0">
         <div className="headline">
           <div className="overflow-hidden">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
@@ -65,10 +66,10 @@ export default function Testimonial() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
         </a>
-      </div>
+      </FadeUp>
 
       {/* Right: stacked card */}
-      <div className="right-col flex-1 flex flex-col items-center gap-6">
+      <FadeUp delay={0.2} className="right-col flex-1 flex flex-col items-center gap-6">
 
         {/* Card stack */}
         <div className="card-stack relative w-full max-w-md h-72">
@@ -134,7 +135,7 @@ export default function Testimonial() {
           </button>
         </div>
 
-      </div>
+      </FadeUp>
     </section>
   );
 }

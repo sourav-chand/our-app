@@ -1,18 +1,20 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 export default function WhoWeAre() {
   return (
     <section className="w-full bg-white px-12 py-20 relative overflow-hidden">
 
       {/* Section label */}
-      <div className="section-label mb-4">
+      <FadeUp className="section-label mb-4">
         <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
           01 WHO WE ARE
         </span>
-      </div>
+      </FadeUp>
 
       {/* Headline */}
-      <div className="headline max-w-3xl">
+      <FadeUp delay={0.1} className="headline max-w-3xl">
         <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black leading-none tracking-tight uppercase">
           <div className="overflow-hidden">
             <span className="block">HAVE A BRILLIANT</span>
@@ -33,7 +35,7 @@ export default function WhoWeAre() {
             <span className="block">YOUR BRANDING!</span>
           </div>
         </h2>
-      </div>
+      </FadeUp>
 
       {/* Decorative shape — top right */}
       <div className="deco-shape absolute top-12 right-16 flex items-end gap-0">
@@ -45,7 +47,7 @@ export default function WhoWeAre() {
       </div>
 
       {/* Bottom row */}
-      <div className="bottom-row flex items-start gap-16 mt-16">
+      <FadeUp delay={0.2} className="bottom-row flex items-start gap-16 mt-16">
 
         {/* Avatars + count */}
         <div className="clients-block flex flex-col gap-3 shrink-0">
@@ -89,10 +91,10 @@ export default function WhoWeAre() {
         {/* Spacer between CTA and images */}
         <div className="flex-1" />
 
-      </div>
+      </FadeUp>
 
       {/* Image + stat row */}
-      <div className="media-row flex items-end gap-6 mt-12">
+      <FadeUp delay={0.3} className="media-row flex items-end gap-6 mt-12">
 
         {/* Left image */}
         <div className="image-left shrink-0 w-56 h-44 rounded-xl bg-gray-200 overflow-hidden flex items-center justify-center">
@@ -136,7 +138,7 @@ export default function WhoWeAre() {
           </span>
         </div>
 
-      </div>
+      </FadeUp>
     </section>
   );
 }

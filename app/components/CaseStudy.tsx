@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const images = [
   { id: 1, src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", alt: "Fashion phones mockup", tall: false },
   { id: 2, src: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&q=80", alt: "iPhone mockup on stones", tall: false },
@@ -16,7 +18,7 @@ export default function CaseStudy() {
     <section className="w-full bg-white px-12 py-20 relative">
 
       {/* Grid */}
-      <div className="case-grid grid grid-cols-4 grid-rows-2 gap-3 relative">
+      <FadeUp className="case-grid grid grid-cols-4 grid-rows-2 gap-3 relative">
         {images.map((img, i) => (
           <div
             key={img.id}
@@ -38,7 +40,7 @@ export default function CaseStudy() {
             CASE<br />STUDY
           </span>
         </div>
-      </div>
+      </FadeUp>
 
     </section>
   );

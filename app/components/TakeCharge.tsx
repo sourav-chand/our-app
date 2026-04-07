@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const features = [
   {
     icon: (
@@ -37,7 +39,7 @@ export default function TakeCharge() {
     <section className="w-full bg-[#aacc00] px-12 py-16 relative overflow-hidden">
 
       {/* Top: headline + avatar + description */}
-      <div className="top-row flex flex-col items-center text-center relative">
+      <FadeUp className="top-row flex flex-col items-center text-center relative">
 
         {/* Avatar peeking above headline */}
         <div className="avatar mb-[-1rem] z-10">
@@ -66,13 +68,13 @@ export default function TakeCharge() {
             Our ability to combine expertise and systems thinking is what fuels us as a team.
           </p>
         </div>
-      </div>
+      </FadeUp>
 
       {/* Divider */}
       <div className="w-full border-t border-black/10 mt-12 mb-10" />
 
       {/* Feature cards */}
-      <div className="features-row grid grid-cols-3 divide-x divide-black/10">
+      <FadeUp delay={0.2} className="features-row grid grid-cols-3 divide-x divide-black/10">
         {features.map((f, i) => (
           <div key={i} className={`feature-card flex flex-col gap-4 px-8 ${i === 0 ? "pl-0" : ""} ${i === features.length - 1 ? "pr-0" : ""}`}>
             <div className="icon text-black">{f.icon}</div>
@@ -82,7 +84,7 @@ export default function TakeCharge() {
             <p className="text-sm text-black/70 leading-relaxed">{f.desc}</p>
           </div>
         ))}
-      </div>
+      </FadeUp>
 
     </section>
   );

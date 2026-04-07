@@ -1,9 +1,11 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 export default function CTA() {
   return (
     <section className="w-full bg-white px-12 py-10">
-      <div className="cta-card relative w-full rounded-2xl bg-[#111] overflow-hidden flex flex-col items-center justify-center py-20 px-8 text-center">
+      <FadeUp className="cta-card relative w-full rounded-2xl bg-[#111] overflow-hidden flex flex-col items-center justify-center py-20 px-8 text-center">
 
         {/* Lime circle deco — top right */}
         <div className="cta-deco absolute -top-16 -right-16 w-72 h-72 rounded-full border-[40px] border-[#aacc00] opacity-90" />
@@ -33,7 +35,7 @@ export default function CTA() {
           </svg>
         </a>
 
-      </div>
+      </FadeUp>
     </section>
   );
 }

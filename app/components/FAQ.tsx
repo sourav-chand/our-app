@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeUp from "./FadeUp";
 
 const faqs = [
   {
@@ -23,7 +24,7 @@ export default function FAQ() {
     <section className="w-full bg-white px-12 py-20 flex gap-16 overflow-hidden">
 
       {/* Left */}
-      <div className="left-col shrink-0 w-64 flex flex-col gap-6">
+      <FadeUp className="left-col shrink-0 w-64 flex flex-col gap-6">
         <div className="headline">
           <div className="overflow-hidden">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
@@ -44,10 +45,10 @@ export default function FAQ() {
         <p className="text-xs text-gray-400 leading-relaxed">
           Frequently asked question (FAQ) pages to find answars.
         </p>
-      </div>
+      </FadeUp>
 
       {/* Right: accordion */}
-      <div className="faq-list flex-1 flex flex-col divide-y divide-gray-100">
+      <FadeUp delay={0.15} className="faq-list flex-1 flex flex-col divide-y divide-gray-100">
         {faqs.map((faq, i) => (
           <div key={i} className="faq-item">
             <button
@@ -68,7 +69,7 @@ export default function FAQ() {
             )}
           </div>
         ))}
-      </div>
+      </FadeUp>
 
     </section>
   );

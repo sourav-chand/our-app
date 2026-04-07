@@ -1,17 +1,19 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#111] flex flex-col items-center justify-center px-12 py-20 gap-6">
 
       {/* Hello tag */}
-      <div className="hello-tag flex items-center gap-2">
+      <FadeUp className="hello-tag flex items-center gap-2">
         <span className="text-2xl">🖐️</span>
         <span className="text-white text-sm font-bold uppercase tracking-widest">HELLO !</span>
-      </div>
+      </FadeUp>
 
       {/* Headline */}
-      <div className="headline text-center">
+      <FadeUp delay={0.1} className="headline text-center">
         <div className="overflow-hidden">
           <h2 className="text-[clamp(3rem,10vw,8rem)] font-black uppercase leading-none tracking-tight text-white">
             LET'S TALK
@@ -22,7 +24,7 @@ export default function Footer() {
             WITH US
           </h2>
         </div>
-      </div>
+      </FadeUp>
 
       {/* Email */}
       <a
@@ -33,7 +35,7 @@ export default function Footer() {
       </a>
 
       {/* Bottom bar */}
-      <div className="footer-bar w-full flex items-center justify-between mt-12 pt-6 border-t border-white/10">
+      <FadeUp delay={0.2} className="footer-bar w-full flex items-center justify-between mt-12 pt-6 border-t border-white/10">
 
         {/* Copyright */}
         <span className="text-gray-500 text-xs uppercase tracking-widest">
@@ -92,7 +94,7 @@ export default function Footer() {
           </button>
         </div>
 
-      </div>
+      </FadeUp>
     </footer>
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const brands = [
   { name: "Smart Education", label: "smart\neducation" },
   { name: "Fitness", label: "FITNESS" },
@@ -21,7 +23,7 @@ export default function Brands() {
       </div>
 
       {/* Brand logos */}
-      <div className="brands-list flex items-center divide-x divide-white/10 overflow-hidden flex-1">
+      <FadeUp className="brands-list flex items-center divide-x divide-white/10 overflow-hidden flex-1">
         {brands.map((brand) => (
           <div
             key={brand.name}
@@ -32,7 +34,7 @@ export default function Brands() {
             </span>
           </div>
         ))}
-      </div>
+      </FadeUp>
     </section>
   );
 }

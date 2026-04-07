@@ -1,5 +1,7 @@
 "use client";
 
+import FadeUp from "./FadeUp";
+
 const skills = [
   {
     icon: (
@@ -49,7 +51,7 @@ export default function EmpoweringSkills() {
     <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top row: headline + description */}
-      <div className="top-row flex items-start justify-between mb-14">
+      <FadeUp className="top-row flex items-start justify-between mb-14">
         <div className="headline">
           <div className="overflow-hidden">
             <h2 className="text-[clamp(2rem,5vw,4rem)] font-black uppercase leading-none tracking-tight text-black">
@@ -66,10 +68,10 @@ export default function EmpoweringSkills() {
         <p className="section-desc max-w-xs text-sm text-gray-500 leading-relaxed mt-2">
           Add the best talent on the market, an agile skilled management & seamless involvement
         </p>
-      </div>
+      </FadeUp>
 
       {/* Bottom row: skills list + visual */}
-      <div className="bottom-row flex items-start gap-12">
+      <FadeUp delay={0.2} className="bottom-row flex items-start gap-12">
 
         {/* Skills list */}
         <div className="skills-list flex flex-col gap-8 w-80 shrink-0">
@@ -130,7 +132,7 @@ export default function EmpoweringSkills() {
           </div>
 
         </div>
-      </div>
+      </FadeUp>
     </section>
   );
 }

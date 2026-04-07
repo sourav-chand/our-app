@@ -1,5 +1,13 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const slideUp = (delay = 0) => ({
+  initial: { y: "100%", opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
+});
+
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-56px)] bg-white flex flex-col px-12 py-10 overflow-hidden">
@@ -11,33 +19,33 @@ export default function Hero() {
       <div className="flex-1 flex flex-col justify-center z-10">
         {/* Line 1 */}
         <div className="overflow-hidden">
-          <h1 className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          <motion.h1 {...slideUp(0)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
             WE ARE
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Line 2 */}
         <div className="overflow-hidden">
-          <h1 className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          <motion.h1 {...slideUp(0.1)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
             SKILLED
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Line 3 */}
         <div className="overflow-hidden">
-          <h1 className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          <motion.h1 {...slideUp(0.2)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
             IN
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Line 4: web design label + AND + badges */}
         <div className="overflow-hidden flex items-center gap-4 mt-1">
-          <span className="text-xs font-bold uppercase leading-tight text-black">
+          <motion.span {...slideUp(0.3)} className="text-xs font-bold uppercase leading-tight text-black">
             WEB<br />DESIGN
-          </span>
-          <h1 className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          </motion.span>
+          <motion.h1 {...slideUp(0.3)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
             AND
-          </h1>
+          </motion.h1>
           {/* Green pill badge */}
           <div className="flex items-center -space-x-4">
             <div className="w-20 h-20 rounded-full bg-[#aacc00] flex items-center justify-center z-10">
@@ -57,7 +65,12 @@ export default function Hero() {
       </div>
 
       {/* Right: Images */}
-      <div className="relative flex-1 flex items-center justify-center h-[500px]">
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        className="relative flex-1 flex items-center justify-center h-[500px]"
+      >
         {/* Red circle with dark-tinted person */}
         <div className="absolute left-8 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-red-600 overflow-hidden">
           <div className="w-full h-full bg-red-700/80 flex items-end justify-center">
@@ -89,11 +102,16 @@ export default function Hero() {
         <div className="absolute top-4 left-1/2 -translate-x-1/2 text-gray-400 text-2xl select-none">
           ∿∿
         </div>
-      </div>{/* end right images */}
+      </motion.div>{/* end right images */}
       </div>{/* end top row */}
 
       {/* Bottom sub-section */}
-      <div className="flex items-start gap-12 pt-8 pb-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+        className="flex items-start gap-12 pt-8 pb-4"
+      >
 
         {/* Scroll down arrow */}
         <div className="scroll-arrow shrink-0 mt-1">
@@ -158,7 +176,7 @@ export default function Hero() {
           </p>
         </div>
 
-      </div>{/* end bottom sub-section */}
+      </motion.div>{/* end bottom sub-section */}
 
       {/* Scroll up button */}
       <button
