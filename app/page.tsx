@@ -3,6 +3,7 @@ import Brands from "./components/Brands";
 import WhoWeAre from "./components/WhoWeAre";
 import TakeCharge from "./components/TakeCharge";
 import EmpoweringSkills from "./components/EmpoweringSkills";
+import TechStack from "./components/TechStack";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <WhoWeAre />
       <TakeCharge />
       <EmpoweringSkills />
+      <TechStack />
     </main>
   );
 }
