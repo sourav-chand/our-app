@@ -4,6 +4,7 @@ import WhoWeAre from "./components/WhoWeAre";
 import TakeCharge from "./components/TakeCharge";
 import EmpoweringSkills from "./components/EmpoweringSkills";
 import TechStack from "./components/TechStack";
+import CaseStudy from "./components/CaseStudy";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <TakeCharge />
       <EmpoweringSkills />
       <TechStack />
+      <CaseStudy />
     </main>
   );
 }
