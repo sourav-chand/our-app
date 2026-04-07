@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Brands from "./components/Brands";
 import WhoWeAre from "./components/WhoWeAre";
+import TakeCharge from "./components/TakeCharge";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Brands />
       <WhoWeAre />
+      <TakeCharge />
     </main>
   );
 }
