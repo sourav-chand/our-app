@@ -5,6 +5,7 @@ import TakeCharge from "./components/TakeCharge";
 import EmpoweringSkills from "./components/EmpoweringSkills";
 import TechStack from "./components/TechStack";
 import CaseStudy from "./components/CaseStudy";
+import PremiumService from "./components/PremiumService";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <EmpoweringSkills />
       <TechStack />
       <CaseStudy />
+      <PremiumService />
     </main>
   );
 }
