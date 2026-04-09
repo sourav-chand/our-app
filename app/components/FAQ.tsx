@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import FadeUp from "./FadeUp";
+import ParallaxSection from "./ParallaxSection";
 
 const faqs = [
   {
@@ -21,7 +22,8 @@ export default function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="w-full bg-white px-12 py-20 flex gap-16 overflow-hidden">
+    <ParallaxSection offset={40} className="w-full">
+      <section className="w-full bg-white px-12 py-20 flex gap-16 overflow-hidden">
 
       {/* Left */}
       <FadeUp className="left-col shrink-0 w-64 flex flex-col gap-6">
@@ -72,5 +74,6 @@ export default function FAQ() {
       </FadeUp>
 
     </section>
+    </ParallaxSection>
   );
 }

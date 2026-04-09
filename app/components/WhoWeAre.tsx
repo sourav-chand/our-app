@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import ParallaxDepth from "./ParallaxDepth";
 
 export default function WhoWeAre() {
   return (
@@ -37,14 +38,21 @@ export default function WhoWeAre() {
         </h2>
       </FadeUp>
 
-      {/* Decorative shape — top right */}
-      <div className="deco-shape absolute top-12 right-16 flex items-end gap-0">
-        <div className="w-10 h-10 rounded-full bg-[#aacc00]" />
-        <div
-          className="w-20 h-20 bg-black"
-          style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
-        />
-      </div>
+      {/* Decorative shape — extreme right */}
+      <ParallaxDepth
+        backgroundSpeed={0.5}
+        foregroundSpeed={0.5}
+        className="deco-shape absolute top-16 right-8 h-32 w-44 overflow-visible"
+        background={
+          <div className="absolute left-235 top-1/10 -translate-y-1/2 w-14 h-14 bg-[#aacc00] rounded-tl-full z-0" />
+        }
+        foreground={
+          <div
+            className="absolute left-250 top-1/10 -translate-y-1/2 w-24 h-20 bg-black z-10"
+            style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)", transform: 'rotate(90deg)' }}
+          />
+        }
+      />
 
       {/* Bottom row */}
       <FadeUp delay={0.2} className="bottom-row flex items-start gap-16 mt-16">

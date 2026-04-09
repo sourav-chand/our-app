@@ -1,10 +1,12 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import ParallaxSection from "./ParallaxSection";
 
 export default function CTA() {
   return (
-    <section className="w-full bg-white px-12 py-10">
+    <ParallaxSection offset={70} className="w-full">
+      <section className="w-full bg-white px-12 py-10">
       <FadeUp className="cta-card relative w-full rounded-2xl bg-[#111] overflow-hidden flex flex-col items-center justify-center py-20 px-8 text-center">
 
         {/* Lime circle deco — top right */}
@@ -36,6 +38,7 @@ export default function CTA() {
         </a>
 
       </FadeUp>
-    </section>
+      </section>
+    </ParallaxSection>
   );
 }

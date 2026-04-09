@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import ParallaxSection from "./ParallaxSection";
 
 const techs = [
   {
@@ -47,7 +48,8 @@ const techs = [
 
 export default function TechStack() {
   return (
-    <section className="w-full bg-white px-12 py-20">
+    <ParallaxSection offset={45} className="w-full">
+      <section className="w-full bg-white px-12 py-20">
 
       {/* Label */}
       <FadeUp className="section-label flex justify-center mb-12">
@@ -70,5 +72,6 @@ export default function TechStack() {
       </FadeUp>
 
     </section>
+    </ParallaxSection>
   );
 }

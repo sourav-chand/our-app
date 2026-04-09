@@ -1,6 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+
 
 const slideUp = (delay = 0) => ({
   initial: { y: "100%", opacity: 0 },
@@ -9,41 +13,48 @@ const slideUp = (delay = 0) => ({
 });
 
 export default function Hero() {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
+  const rightY = useTransform(scrollYProgress, [0, 0.87], ["90%", "0%"]);
+
   return (
-    <section className="relative w-full min-h-[calc(100vh-56px)] bg-white flex flex-col px-12 py-10 overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-56px)] bg-white flex flex-col px-12 py-10 overflow-visible">
 
       {/* Top row: headline + images */}
-      <div className="flex items-center flex-1">
+      <div className="flex items-end pl-20 -mt-15 flex-1 relative py-0 pt-0 ">
 
       {/* Left: Headline */}
-      <div className="flex-1 flex flex-col justify-center z-10">
+      <div className="flex-1 flex flex-col justify-center relative z-10 -top-[18vh]">
         {/* Line 1 */}
         <div className="overflow-hidden">
-          <motion.h1 {...slideUp(0)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          <motion.h1 {...slideUp(0)} className="text-[clamp(2.5rem,7vw,9rem)] font-black leading-[0.85] tracking-tight text-black uppercase m-0">
             WE ARE
           </motion.h1>
         </div>
 
         {/* Line 2 */}
-        <div className="overflow-hidden">
-          <motion.h1 {...slideUp(0.1)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
-            SKILLED
+        <div className="overflow-hidden mt-0">
+          <motion.h1 {...slideUp(0.1)} className="text-[clamp(2.5rem,7vw,9rem)] font-black leading-[0.85] tracking-tight text-black uppercase m-0">
+            SKILLED IN
           </motion.h1>
         </div>
 
         {/* Line 3 */}
-        <div className="overflow-hidden">
-          <motion.h1 {...slideUp(0.2)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+        {/* <div className="overflow-hidden mt-0">
+          <motion.h1 {...slideUp(0.2)} className="text-[clamp(2.5rem,7vw,6rem)] font-black leading-[0.85] tracking-tight text-black uppercase m-0">
             IN
           </motion.h1>
-        </div>
+        </div> */}
 
         {/* Line 4: web design label + AND + badges */}
-        <div className="overflow-hidden flex items-center gap-4 mt-1">
+        <div className="overflow-hidden flex items-center gap-4 mt-0 -mt-2">
           <motion.span {...slideUp(0.3)} className="text-xs font-bold uppercase leading-tight text-black">
             WEB<br />DESIGN
           </motion.span>
-          <motion.h1 {...slideUp(0.3)} className="text-[clamp(4rem,10vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
+          <motion.h1 {...slideUp(0.3)} className="text-[clamp(2.5rem,7vw,9rem)] font-black leading-none tracking-tight text-black uppercase">
             AND
           </motion.h1>
           {/* Green pill badge */}
@@ -57,52 +68,54 @@ export default function Hero() {
               </span>
             </div>
             {/* Avatar circle */}
-            <div className="w-20 h-20 rounded-full bg-gray-800 border-2 border-white overflow-hidden z-20 flex items-center justify-center">
-              <span className="text-3xl">🤖</span>
+            <div className="ml-auto w-16 h-16 rounded-full bg-gray-800 border-2 border-white overflow-hidden z-20 flex items-center justify-center">
+              <span className="text-2xl">🤖</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Right: Images */}
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-        className="relative flex-1 flex items-center justify-center h-[500px]"
-      >
-        {/* Red circle with dark-tinted person */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-red-600 overflow-hidden">
-          <div className="w-full h-full bg-red-700/80 flex items-end justify-center">
-            <div className="w-full h-full bg-gradient-to-t from-red-900 to-red-500 opacity-90" />
+      {/* Right: Splitting/Merging Circle Images */}
+      <div className="flex-1 flex justify-center items-center relative h-[500px]">
+        <div ref={imageRef} className="relative w-[280px] h-[280px]">
+
+          {/* RIGHT HALF - Slides up on scroll */}
+          <motion.div
+            style={{ y: rightY }}
+            className="absolute inset-y-0 right-0 w-1/2 overflow-hidden"
+          >
+            <div className="absolute right-0 w-[280px] h-[280px] rounded-full overflow-hidden border-l-2 border-white/20 bg-red-600 flex items-center justify-center">
+              {/* <span className="text-white text-lg">Right Half</span> */}
+              <img src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/06/1-1.jpg" alt="" className="w-full h-full object-contain translate-x-17" />
+            </div>
+          </motion.div>
+
+          {/* LEFT HALF - Static */}
+          <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+            <div className="absolute left-0 w-[280px] h-[280px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center">
+              {/* <span className="text-white text-lg">Left Half</span> */}
+              <img src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/07/Group-1000003642.png" alt="" className="w-full h-full object-contain -translate-x-17.5" />
+            </div>
+          </div>
+
+          {/* Watch video control */}
+          <div className="absolute bottom-0 right-0 translate-x-1/2 z-30 flex items-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center shadow-2xl">
+              <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <span className="text-[10px] font-bold uppercase tracking-tighter leading-tight">
+              WATCH<br />VIDEO
+            </span>
+          </div>
+
+          {/* Squiggle decoration */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-3xl text-gray-300 opacity-50">
+            ∿∿
           </div>
         </div>
-
-        {/* Main photo card */}
-        <div className="absolute right-0 top-0 w-72 h-80 rounded-2xl bg-gray-200 overflow-hidden shadow-lg flex items-center justify-center">
-          <span className="text-gray-400 text-sm">Team photo</span>
-        </div>
-
-        {/* Watch video button */}
-        <div className="absolute right-0 bottom-8 flex items-center gap-3">
-          <button
-            aria-label="Watch video"
-            className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:scale-105 transition-transform"
-          >
-            <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </button>
-          <span className="text-xs font-semibold uppercase tracking-widest text-black">
-            WATCH<br />VIDEO
-          </span>
-        </div>
-
-        {/* Squiggle deco */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 text-gray-400 text-2xl select-none">
-          ∿∿
-        </div>
-      </motion.div>{/* end right images */}
+      </div>
       </div>{/* end top row */}
 
       {/* Bottom sub-section */}
@@ -126,7 +139,7 @@ export default function Hero() {
         </div>
 
         {/* Description + CTA */}
-        <div className="sub-description max-w-sm">
+        <div className=" flex flex-col sub-description max-w-sm relative -top-[10vh]">
           <p className="text-gray-700 text-base leading-relaxed">
             We are a full-service digital agency that builds fascinating user experiences. our team creates and exceptional UI design and functionality.
           </p>

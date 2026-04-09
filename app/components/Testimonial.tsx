@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import FadeUp from "./FadeUp";
+import ParallaxDepth from "./ParallaxDepth";
 
 const testimonials = [
   {
@@ -36,40 +37,42 @@ export default function Testimonial() {
   const t = testimonials[current];
 
   return (
-    <section className="w-full bg-white px-12 py-20 flex items-center gap-16 overflow-hidden">
-
-      {/* Left */}
-      <FadeUp className="left-col flex flex-col gap-8 max-w-xs shrink-0">
-        <div className="headline">
-          <div className="overflow-hidden">
-            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
-              TRUSTED CLIENTS
-            </h2>
+    <ParallaxDepth
+      backgroundSpeed={0.1}
+      foregroundSpeed={0.65}
+      className="w-full bg-white px-12 py-20 flex items-center gap-16 overflow-hidden"
+      background={
+        <FadeUp className="left-col flex flex-col gap-8 max-w-xs shrink-0">
+          <div className="headline">
+            <div className="overflow-hidden">
+              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
+                TRUSTED CLIENTS
+              </h2>
+            </div>
+            <div className="overflow-hidden">
+              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
+                TESTIMONIAL
+              </h2>
+            </div>
           </div>
-          <div className="overflow-hidden">
-            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-none tracking-tight text-black">
-              TESTIMONIAL
-            </h2>
-          </div>
-        </div>
 
-        <p className="text-sm text-gray-500 leading-relaxed">
-          Consumers today rely heavily on digital means to research products. We research a brand of bldend
-        </p>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            Consumers today rely heavily on digital means to research products. We research a brand of bldend
+          </p>
 
-        <a
-          href="#"
-          className="explore-cta w-fit flex items-center gap-2 border border-gray-200 rounded-full px-6 py-3 text-xs font-bold uppercase tracking-widest text-black hover:border-black transition-colors"
-        >
-          EXPLORE US MORE
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
-          </svg>
-        </a>
-      </FadeUp>
-
-      {/* Right: stacked card */}
-      <FadeUp delay={0.2} className="right-col flex-1 flex flex-col items-center gap-6">
+          <a
+            href="#"
+            className="explore-cta w-fit flex items-center gap-2 border border-gray-200 rounded-full px-6 py-3 text-xs font-bold uppercase tracking-widest text-black hover:border-black transition-colors"
+          >
+            EXPLORE US MORE
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </a>
+        </FadeUp>
+      }
+      foreground={
+        <FadeUp delay={0.2} className="right-col flex-1 flex flex-col items-center gap-6">
 
         {/* Card stack */}
         <div className="card-stack relative w-full max-w-md h-72">
@@ -136,6 +139,7 @@ export default function Testimonial() {
         </div>
 
       </FadeUp>
-    </section>
+      }
+    />
   );
 }

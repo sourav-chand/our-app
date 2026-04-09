@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import ParallaxSection from "./ParallaxSection";
 
 const skills = [
   {
@@ -48,7 +49,8 @@ const skills = [
 
 export default function EmpoweringSkills() {
   return (
-    <section className="w-full bg-white px-12 py-20 overflow-hidden">
+    <ParallaxSection offset={35} className="w-full">
+      <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top row: headline + description */}
       <FadeUp className="top-row flex items-start justify-between mb-14">
@@ -134,5 +136,6 @@ export default function EmpoweringSkills() {
         </div>
       </FadeUp>
     </section>
+    </ParallaxSection>
   );
 }

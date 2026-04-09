@@ -11,6 +11,7 @@ import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Journal from "./components/Journal";
 import Footer from "./components/Footer";
+import "sheryjs/dist/Shery.css";
 
 export default function Home() {
   return (
@@ -30,4 +31,5 @@ export default function Home() {
       <Footer />
     </main>
   );
+  
 }

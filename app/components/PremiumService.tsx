@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import ParallaxSection from "./ParallaxSection";
 
 const services = [
   {
@@ -52,7 +53,8 @@ const services = [
 
 export default function PremiumService() {
   return (
-    <section className="w-full bg-white px-12 py-20 overflow-hidden">
+    <ParallaxSection offset={50} className="w-full">
+      <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top: avatar + headline + description */}
       <FadeUp className="top-row flex flex-col items-start relative mb-16">
@@ -122,5 +124,6 @@ export default function PremiumService() {
       </FadeUp>
 
     </section>
+    </ParallaxSection>
   );
 }
