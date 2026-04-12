@@ -27,6 +27,9 @@ export default function CaseStudy() {
         </div>
       }
       foreground={
+        
+
+       
         <section className="w-full relative z-10">
           <FadeUp className="case-grid grid grid-cols-4 grid-rows-2 gap-3 relative">
         {images.map((img, i) => (
@@ -52,6 +55,7 @@ export default function CaseStudy() {
         </div>
         </FadeUp>
         </section>
+       
       }
     />
   );

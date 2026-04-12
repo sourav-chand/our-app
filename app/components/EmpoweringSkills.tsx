@@ -50,6 +50,9 @@ const skills = [
 export default function EmpoweringSkills() {
   return (
     <ParallaxSection offset={35} className="w-full">
+      <div className="container">
+
+      
       <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top row: headline + description */}
@@ -136,6 +139,7 @@ export default function EmpoweringSkills() {
         </div>
       </FadeUp>
     </section>
+    </div>
     </ParallaxSection>
   );
 }

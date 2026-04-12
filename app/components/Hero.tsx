@@ -2,7 +2,7 @@
 
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 
 
@@ -14,11 +14,15 @@ const slideUp = (delay = 0) => ({
 
 export default function Hero() {
   const imageRef = useRef<HTMLDivElement>(null);
+  const leftImageRef = useRef<HTMLImageElement>(null);
+  const rightImageRef = useRef<HTMLImageElement>(null);
   const { scrollYProgress } = useScroll({
     target: imageRef,
     offset: ["start end", "end start"],
   });
   const rightY = useTransform(scrollYProgress, [0, 0.87], ["90%", "0%"]);
+
+
 
   return (
     <section className="relative w-full min-h-[calc(100vh-56px)] bg-white flex flex-col px-12 py-10 overflow-visible">
@@ -34,6 +38,7 @@ export default function Hero() {
             WE ARE
           </motion.h1>
         </div>
+
 
         {/* Line 2 */}
         <div className="overflow-hidden mt-0">
@@ -86,7 +91,7 @@ export default function Hero() {
           >
             <div className="absolute right-0 w-[280px] h-[280px] rounded-full overflow-hidden border-l-2 border-white/20 bg-red-600 flex items-center justify-center">
               {/* <span className="text-white text-lg">Right Half</span> */}
-              <img src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/06/1-1.jpg" alt="" className="w-full h-full object-contain translate-x-17" />
+              <img ref={rightImageRef} src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/06/1-1.jpg" alt="" className="w-full h-full object-contain translate-x-17" />
             </div>
           </motion.div>
 
@@ -94,7 +99,7 @@ export default function Hero() {
           <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
             <div className="absolute left-0 w-[280px] h-[280px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center">
               {/* <span className="text-white text-lg">Left Half</span> */}
-              <img src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/07/Group-1000003642.png" alt="" className="w-full h-full object-contain -translate-x-17.5" />
+              <img ref={leftImageRef} src="https://arolax.crowdytheme-demo.com/web-design-agency/wp-content/uploads/sites/80/2024/07/Group-1000003642.png" alt="" className="shery-img w-full h-full object-contain -translate-x-17.5 cursor-pointer image" />
             </div>
           </div>
 
@@ -105,7 +110,7 @@ export default function Hero() {
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-tighter leading-tight">
+            <span className="image text-[10px] font-bold uppercase tracking-tighter leading-tight">
               WATCH<br />VIDEO
             </span>
           </div>
@@ -190,6 +195,9 @@ export default function Hero() {
         </div>
 
       </motion.div>{/* end bottom sub-section */}
+
+      {/* Shery.js initialization */}
+      
 
       {/* Scroll up button */}
       <button

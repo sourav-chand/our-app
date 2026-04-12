@@ -27,6 +27,9 @@ export default function Brands() {
         </div>
       }
       foreground={
+       
+
+        
         <section className="w-full">
           <FadeUp className="brands-list flex items-center divide-x divide-white/10 overflow-hidden flex-1">
             {brands.map((brand) => (
@@ -41,6 +44,7 @@ export default function Brands() {
             ))}
           </FadeUp>
         </section>
+        
       }
     />
   );

@@ -27,6 +27,9 @@ const posts = [
 export default function Journal() {
   return (
     <ParallaxSection offset={65} className="w-full">
+     
+
+      
       <section className="w-full bg-white px-12 py-20 overflow-hidden">
 
       {/* Top row */}
@@ -102,6 +105,7 @@ export default function Journal() {
       </FadeUp>
 
     </section>
+    
     </ParallaxSection>
   );
 }

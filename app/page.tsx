@@ -1,3 +1,4 @@
+"use client";
 import Hero from "./components/Hero";
 import Brands from "./components/Brands";
 import WhoWeAre from "./components/WhoWeAre";
@@ -11,17 +12,81 @@ import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Journal from "./components/Journal";
 import Footer from "./components/Footer";
-import "sheryjs/dist/Shery.css";
+import {useEffect,useRef} from "react";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import {ReactLenis} from "lenis/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 export default function Home() {
+
+ const lenisRef = useRef<any>(null);
+const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(()=>{
+    function update(time: number){
+      (lenisRef.current as any)?.lenis?.raf(time * 1000);
+    }
+
+    (lenisRef.current as any)?.lenis?.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(update);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => gsap.ticker.remove(update);
+  },[]);
+
+  useGSAP(()=>{
+    const sections=document.querySelectorAll("section");
+    sections.forEach((section,index)=>{
+      const container=section.querySelector(".container");
+
+      gsap.to(container,{
+        rotation:0,
+        skew:1,
+        ease:"none",
+        scrollTrigger:{
+          trigger:section,
+          start:"top bottom",
+          end:"top 30%",
+          scrub:1,
+        }
+      })
+
+      
+    })
+  },{scope:containerRef})
+
   return (
-    <main className="flex flex-col flex-1">
-      <Hero />
-      <Brands />
-      <WhoWeAre />
-      <TakeCharge />
-      <EmpoweringSkills />
-      <TechStack />
+    <ReactLenis root options={{autoRaf:false}} ref={lenisRef}>
+    <main ref={containerRef} className="flex flex-col flex-1 overflow-x-hidden">
+     
+         <Hero />
+      
+      
+     
+        <Brands />
+      
+      
+      
+        <WhoWeAre />
+      
+      
+      
+        <TakeCharge />
+      
+      
+      <section className="five">
+         <EmpoweringSkills />
+      </section>
+     
+      
+        <TechStack />
+      
+      
       <CaseStudy />
       <PremiumService />
       <Testimonial />
@@ -30,6 +95,7 @@ export default function Home() {
       <Journal />
       <Footer />
     </main>
+    </ReactLenis>
   );
   
 }

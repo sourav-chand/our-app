@@ -1,10 +1,38 @@
 @import "tailwindcss";
-
+/* @import "sheryjs/dist/Shery.css"; */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --base-100:#8e9487;
+  --base-200:#1e1e1c;
+  --base-300:#9381ff;
+  --base-400:#f0c808;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+section{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  transform: rotate(40deg);
+  transform-origin: bottom left;
+  will-change: transform;
+}
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -22,12 +50,15 @@
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Parallax optimization */
@@ -44,3 +75,4 @@ body {
   backface-visibility: hidden;
   perspective: 1000px;
 }
+
