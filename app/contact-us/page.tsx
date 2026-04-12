@@ -5,6 +5,7 @@ import ContactProLevel from "../components/ContactProLevel";
 import ContactTestimonialVideo from "../components/ContactTestimonialVideo";
 import ContactTeam from "../components/ContactTeam";
 import ContactPricing from "../components/ContactPricing";
+import Footer from "@/app/components/Footer";
 
 export default function ContactUsPage() {
   return (
@@ -16,6 +17,7 @@ export default function ContactUsPage() {
       <ContactTestimonialVideo />
       <ContactTeam />
       <ContactPricing />
+      <Footer/>
     </main>
   );
 }
