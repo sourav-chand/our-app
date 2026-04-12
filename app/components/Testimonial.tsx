@@ -51,7 +51,7 @@ export default function Testimonial() {
     const y = e.clientY - (rect.top + rect.height / 2);
 
     xTo(x * 0.4);
-yTo(y * 0.4);
+    yTo(y * 0.4);
   };
 
   const handleMouseLeave = () => {
